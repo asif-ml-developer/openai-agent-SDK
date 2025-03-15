@@ -1,14 +1,9 @@
-#  only agent file  without chainlit 
-#  uv run main0.py
-
 import os
 from dotenv import load_dotenv
-from typing import cast
-import chainlit as cl
 from agents import Agent, Runner, AsyncOpenAI, OpenAIChatCompletionsModel
 from agents.run import RunConfig
 
-
+# Load the environment variables from the .env file
 load_dotenv()
 
 gemini_api_key = os.getenv("GEMINI_API_KEY")
@@ -34,11 +29,9 @@ config = RunConfig(
     tracing_disabled=True
 )
 
-
 agent: Agent = Agent(name="Assistant", instructions="You are a helpful assistant", model=model)
 
-result = Runner.run_sync(agent, "Hello, how are you.", run_config=config) #this adjusted below
+result = Runner.run_sync(agent, "Hello, how are you.", run_config=config)
 
 print("\nCALLING AGENT\n")
-
 print(result.final_output)

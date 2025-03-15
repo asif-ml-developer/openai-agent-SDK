@@ -1,3 +1,5 @@
+# mutliple agents wiht tracing
+
 import asyncio
 import os
 from dotenv import load_dotenv, find_dotenv
@@ -36,7 +38,7 @@ model =  OpenAIChatCompletionsModel(
 config = RunConfig(
     model=model,
     model_provider=provider,
-    tracing_disabled=True,
+    # tracing_disabled=True,
 
 )
 
