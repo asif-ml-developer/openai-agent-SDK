@@ -1,0 +1,21 @@
+[project]
+name = "chainlit-agent-with-history"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "asif-ml-developer", email = "asif.ml.developer@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "chainlit>=2.4.1",
+    "openai-agents>=0.0.4",
+    "python-dotenv>=1.0.1",
+]
+
+[project.scripts]
+chainlit-agent-with-history = "chainlit_agent_with_history:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
